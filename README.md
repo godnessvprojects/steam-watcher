@@ -1,70 +1,79 @@
 ================================================================================
-          STEAM WATCHER - CONFIGURACIÓN DEL BOT DE DISCORD 24/7 GRATIS
+                    STEAM WATCHER v1.0.0 - GUÍA Y SEGURIDAD
 ================================================================================
-Desarrollador: GodNess (ESP) | Contacto Discord: @zzgodness
+Desarrollado por: GodNess (ESP)
+Contacto Discord: @zzgodness
 ================================================================================
 
-Este bot publicará de forma 100% automática y gratuita:
-  1. Juegos y DLCs 100% GRATIS por tiempo limitado en Steam (Free-to-keep).
-  2. Grandes ofertas destacadas del día en Steam (descuentos >= 70%).
+¡Gracias por descargar Steam Watcher!
 
-Sigue estos 4 sencillos pasos para dejarlo funcionando en 5 minutos:
-
---------------------------------------------------------------------------------
-PASO 1: CREAR EL WEBHOOK EN TU SERVIDOR DE DISCORD
---------------------------------------------------------------------------------
-1. Abre tu Discord y entra a tu servidor.
-2. Ve a los ajustes del canal donde quieras que salgan las ofertas 
-   (por ejemplo el canal "#ofertas-steam" o "#juegos-gratis").
-3. Haz clic en "Editar canal" (el icono de engranaje) ➔ "Integraciones".
-4. Pulsa en "Webhooks" ➔ "Nuevo Webhook".
-5. Ponle de nombre "Steam Watcher" (puedes ponerle el icono de la app si quieres).
-6. Haz clic en "Copiar URL de Webhook".
-   (Guárdate ese enlace, lo usarás en el Paso 3).
+Steam Watcher es una aplicación de escritorio diseñada para monitorizar 
+precios, variaciones de descuento, ofertas en DLCs, evolución histórica, 
+sincronización con tu lista de deseados (Wishlist) y aviso de juegos 100% 
+GRATIS por tiempo limitado en Steam, con notificaciones nativas de Windows.
 
 --------------------------------------------------------------------------------
-PASO 2: CREAR UN REPOSITORIO GRATIS EN GITHUB
+1. INSTRUCCIONES DE INSTALACIÓN
 --------------------------------------------------------------------------------
-1. Entra a tu cuenta en https://github.com/ (si no tienes, crea una gratis).
-2. Haz clic en el botón verde "New" (o "Nuevo repositorio").
-3. Nombre del repositorio: ej. "steam-watcher-bot"
-4. Selecciona "Private" (Privado) para que solo tú tengas acceso.
-5. Haz clic en "Create repository".
-6. Sube los archivos de esta carpeta "discord-bot":
-   - steam_bot.js
-   - package.json
-   - posted_deals.json
-   - La carpeta ".github/workflows/steam_deals.yml"
-   (Puedes arrastrarlos directamente a la página de GitHub donde dice 
-    "uploading an existing file").
+1. Ejecuta el archivo "Instalador_Steam_Watcher.exe".
+2. Sigue los pasos del asistente de instalación.
+3. El instalador te preguntará si deseas que Steam Watcher se inicie 
+   automáticamente en segundo plano con Windows (recomendado para que 
+   monitorice ofertas y te avise sin que tengas que abrirlo a mano).
 
 --------------------------------------------------------------------------------
-PASO 3: GUARDAR TU WEBHOOK EN SECRETS (100% PROTEGIDO)
+2. AVISO DE WINDOWS SMARTSCREEN ("Editor desconocido")
 --------------------------------------------------------------------------------
-1. En tu repositorio de GitHub, haz clic en la pestaña "Settings" (Ajustes).
-2. En el menú de la izquierda, baja hasta "Secrets and variables" ➔ "Actions".
-3. Haz clic en el botón verde "New repository secret".
-4. En "Name" escribe exactamente:
-   DISCORD_WEBHOOK_URL
-5. En "Secret" pega la URL del Webhook de Discord que copiaste en el Paso 1.
-6. Haz clic en "Add secret".
-   (Nadie en internet podrá ver jamás tu webhook, queda cifrado en GitHub).
+Al ejecutar el instalador por primera vez, es posible que Windows muestre una 
+ventana azul con el mensaje:
+
+   "Windows protegió su PC - SmartScreen impidió el inicio de una aplicación desconocida"
+   "Editor: Editor desconocido"
+
+¿Por qué ocurre esto?
+- Steam Watcher es un proyecto independiente (Indie) y 100% gratuito.
+- Microsoft exige a los desarrolladores pagar entre 200€ y 400€ al año por un 
+  certificado digital comercial (EV Code Signing) para que no muestre ese aviso.
+- Al tratarse de un software gratuito sin ánimo de lucro, no cuenta con dicha firma 
+  comercial de pago.
+- Al ser un instalador recién publicado, los servidores de Microsoft aún no 
+  acumulan miles de descargas para catalogarlo automáticamente.
+
+¿Cómo continuar la instalación?
+1. En la ventana azul de advertencia, haz clic en el texto subrayado:
+   --> "Más información"
+2. Aparecerá un botón en la parte inferior:
+   --> "Ejecutar de todas formas"
+3. El instalador se ejecutará y configurará la app con total normalidad.
 
 --------------------------------------------------------------------------------
-PASO 4: DAR PERMISO DE ESCRITURA Y PROBARLO
+3. TRANSPARENCIA Y SEGURIDAD (ESCANEOS)
 --------------------------------------------------------------------------------
-1. En GitHub, en "Settings" ➔ "Actions" ➔ "General":
-   Baja hasta la sección "Workflow permissions" y selecciona:
-   "Read and write permissions" (para que pueda guardar el historial de ofertas).
-   Pulsa "Save".
+Tu seguridad es lo primero. Puedes comprobar que el programa es 100% limpio 
+y seguro de varias formas:
 
-2. ¡Listo! Para probarlo de inmediato:
-   - Ve a la pestaña "Actions" arriba en tu repositorio.
-   - En la izquierda haz clic en "Steam Watcher Discord Bot".
-   - Pulsa en "Run workflow" ➔ botón verde "Run workflow".
-   - Verás que en unos segundos se pone en verde y ¡aparecerán las primeras 
-     ofertas directamente en tu canal de Discord!
+1. Escaneo en VirusTotal:
+   Puedes subir "Instalador_Steam_Watcher.exe" o el ejecutable a:
+   https://www.virustotal.com/
+   y comprobar que está limpio frente a más de 70 motores antivirus 
+   (Kaspersky, Microsoft Defender, BitDefender, Avast, Malwarebytes, etc.).
 
-A partir de ahí, el bot se ejecutará automáticamente cada hora, las 24 horas 
-del día, los 365 días del año sin necesidad de que tengas tu ordenador encendido.
+2. Privacidad y Datos (Local-First):
+   - Steam Watcher NO recopila datos personales.
+   - NO requiere tu contraseña de Steam ni datos de inicio de sesión.
+   - Toda tu biblioteca, configuraciones y precios se guardan en una base de 
+     datos SQLite local en tu propio disco duro.
+   - Las peticiones se realizan de forma directa y oficial a los servidores 
+     públicos de Steam Store.
+
+--------------------------------------------------------------------------------
+4. SOPORTE Y CONTACTO
+--------------------------------------------------------------------------------
+¿Tienes dudas, sugerencias o quieres reportar un problema?
+Puedes contactarme directamente a través de Discord:
+
+   Discord: @zzgodness
+   Creado por: GodNess (ESP)
+
+¡Que disfrutes de las mejores ofertas en Steam!
 ================================================================================
