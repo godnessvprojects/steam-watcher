@@ -1,0 +1,49 @@
+{
+  "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
+  "productName": "Steam Watcher",
+  "version": "1.0.0",
+  "identifier": "com.steamwatcher.desktop",
+  "build": {
+    "frontendDist": "../dist",
+    "devUrl": "http://localhost:5173",
+    "beforeDevCommand": "npm run dev",
+    "beforeBuildCommand": "npm run build"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "Steam Watcher",
+        "width": 1200,
+        "height": 780,
+        "minWidth": 960,
+        "minHeight": 640,
+        "resizable": true,
+        "fullscreen": false,
+        "center": true
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "publisher": "GodNess",
+    "copyright": "Copyright © 2026 GodNess (ESP)",
+    "shortDescription": "Steam Watcher - Monitor de ofertas y descuentos de Steam",
+    "longDescription": "Steam Watcher es una aplicación de escritorio diseñada para monitorizar precios, descuentos, DLCs e historial de ofertas en Steam con notificaciones nativas de Windows.",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "windows": {
+      "nsis": {
+        "installerHooks": "custom_hooks.nsh"
+      }
+    }
+  }
+}

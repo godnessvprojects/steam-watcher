@@ -1,0 +1,26 @@
+[package]
+name = "steam-watcher"
+version = "1.0.0"
+description = "Steam Watcher - Desktop app to monitor Steam deals"
+authors = ["GodNess (ESP)"]
+edition = "2021"
+
+[lib]
+name = "steam_watcher_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2.7.6", features = [] }
+
+[dependencies]
+serde_json = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+log = "0.4"
+tauri = { version = "2.12.7", features = ["tray-icon"] }
+tauri-plugin-notification = "2"
+tauri-plugin-opener = "2"
+rusqlite = { version = "0.32", features = ["bundled"] }
+reqwest = { version = "0.12", default-features = false, features = ["json", "rustls-tls"] }
+tokio = { version = "1", features = ["full"] }
+chrono = { version = "0.4", features = ["serde"] }
+winreg = "0.56"
