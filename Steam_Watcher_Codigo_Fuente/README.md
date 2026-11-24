@@ -86,7 +86,7 @@ La base de datos local se crea y migra automáticamente en la carpeta de datos d
 
 ### 1. Probar en desarrollo:
 ```powershell
-cd C:\Users\mrsfm\.gemini\antigravity\scratch\steam-watcher
+cd C:\Users\user\.gemini\antigravity\scratch\steam-watcher
 npm run dev
 # o con Tauri en vivo:
 npx tauri dev
